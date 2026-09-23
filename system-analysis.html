@@ -1,0 +1,2346 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDU-TECH | System Analysis</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(70, 100, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(160, 70, 255, 0.15), transparent 30%),
+                linear-gradient(135deg, #07111f, #0b1530 50%, #100b25);
+
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(5, 10, 25, 0.88);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+
+            background: linear-gradient(90deg, #62b5ff, #a96cff);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(120,170,255,0.25);
+
+            padding: 9px 16px;
+            border-radius: 30px;
+
+            transition: 0.3s;
+
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background: rgba(90,140,255,0.25);
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 70px 20px 45px;
+
+            text-align: center;
+        }
+
+        .hero-icon {
+            width: 90px;
+            height: 90px;
+
+            margin: auto auto 20px;
+
+            border-radius: 26px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 44px;
+
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+            box-shadow:
+                0 0 25px rgba(70,120,255,0.45),
+                0 0 60px rgba(130,70,255,0.18);
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 70px);
+
+            line-height: 1;
+
+            margin-bottom: 18px;
+
+            background: linear-gradient(
+                90deg,
+                #70c7ff,
+                #8e8cff,
+                #c178ff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #b8c7e8;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        main {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 0 20px 60px;
+        }
+
+        .section {
+            margin-top: 45px;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-size: 30px;
+
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: #73baff;
+        }
+
+
+        /* ================= TOPICS ================= */
+
+        .topic-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .topic-card {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 25px;
+
+            border-radius: 22px;
+
+            background: rgba(18, 29, 60, 0.7);
+
+            border: 1px solid rgba(100,160,255,0.22);
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(100,180,255,0.6);
+
+            box-shadow:
+                0 15px 40px rgba(40,100,255,0.18);
+        }
+
+        .topic-number {
+            color: #71bfff;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .topic-icon {
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+        .topic-card h3 {
+            font-size: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .topic-card p {
+            color: #aebcda;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= LEARNING MATERIAL ================= */
+
+        .material-card {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+
+            padding: 25px;
+
+            border-radius: 25px;
+
+            background: rgba(16,27,55,0.75);
+
+            border: 1px solid rgba(100,160,255,0.2);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .material-image-box {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 300px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background: rgba(255,255,255,0.04);
+        }
+
+        .material-image {
+            width: 100%;
+
+            height: 100%;
+
+            max-height: 400px;
+
+            object-fit: contain;
+
+            border-radius: 15px;
+        }
+
+        .material-content {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .material-content h3 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .material-content p {
+            color: #b8c7e8;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .material-list {
+            padding-left: 20px;
+
+            color: #cbd7f0;
+
+            line-height: 2;
+        }
+
+
+        /* ================= VIDEO ================= */
+
+        .video-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+        .video-card {
+            background: rgba(16,27,55,0.75);
+
+            border: 1px solid rgba(100,160,255,0.2);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .video-wrapper {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+
+            height: 100%;
+
+            border: 0;
+        }
+
+        .video-info {
+            padding: 18px;
+        }
+
+        .video-info h3 {
+            font-size: 18px;
+
+            margin-bottom: 7px;
+        }
+
+        .video-info p {
+            color: #9faecc;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= PDF ================= */
+
+        .pdf-card {
+            text-align: center;
+
+            padding: 35px 25px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(40,80,170,0.18),
+                    rgba(110,60,180,0.16)
+                );
+
+            border: 1px solid rgba(100,160,255,0.25);
+        }
+
+        .pdf-icon {
+            font-size: 55px;
+
+            margin-bottom: 15px;
+        }
+
+        .pdf-card h3 {
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+        .pdf-card p {
+            color: #b4c2df;
+
+            margin-bottom: 22px;
+        }
+
+        .pdf-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .btn-open {
+            background:
+                linear-gradient(135deg, #2563eb, #4f46e5);
+        }
+
+        .btn-download {
+            background:
+                linear-gradient(135deg, #7c3aed, #9333ea);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 25px rgba(70,100,255,0.3);
+        }
+
+
+        /* ================= SDLC ================= */
+
+        .sdlc-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            gap: 12px;
+        }
+
+        .sdlc-card {
+            text-align: center;
+
+            padding: 22px 12px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(18,29,60,0.7);
+
+            border:
+                1px solid rgba(100,160,255,0.2);
+
+            transition: 0.3s;
+        }
+
+        .sdlc-card:hover {
+            transform: translateY(-5px);
+
+            background:
+                rgba(40,80,160,0.25);
+        }
+
+        .sdlc-number {
+            display: inline-flex;
+
+            width: 35px;
+            height: 35px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(135deg,#2563eb,#7c3aed);
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .sdlc-card h3 {
+            font-size: 16px;
+
+            margin-bottom: 7px;
+        }
+
+        .sdlc-card p {
+            color: #aab9d5;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================= REQUIREMENTS ================= */
+
+        .requirement-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 18px;
+        }
+
+        .requirement-card {
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(18,29,60,0.7);
+
+            border:
+                1px solid rgba(100,160,255,0.2);
+        }
+
+        .requirement-card h3 {
+            color: #77c1ff;
+
+            margin-bottom: 10px;
+        }
+
+        .requirement-card p {
+            color: #b1bfdc;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= DFD ================= */
+
+        .dfd-container {
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(15,25,50,0.75);
+
+            border:
+                1px solid rgba(100,160,255,0.2);
+
+            overflow-x: auto;
+        }
+
+        .dfd-flow {
+            min-width: 700px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        .dfd-item {
+            min-width: 130px;
+
+            padding: 18px 12px;
+
+            text-align: center;
+
+            border-radius: 15px;
+
+            background:
+                rgba(40,80,170,0.18);
+
+            border:
+                1px solid rgba(100,170,255,0.35);
+        }
+
+        .dfd-item strong {
+            display: block;
+
+            color: #7cc4ff;
+
+            margin-bottom: 5px;
+        }
+
+        .dfd-item span {
+            color: #b7c5df;
+
+            font-size: 12px;
+        }
+
+        .dfd-arrow {
+            font-size: 25px;
+
+            color: #7b9cff;
+        }
+
+
+        /* ================= UML ================= */
+
+        .uml-box {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+        }
+
+        .uml-card {
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background:
+                rgba(18,29,60,0.7);
+
+            border:
+                1px solid rgba(100,160,255,0.2);
+        }
+
+        .uml-card .uml-icon {
+            font-size: 40px;
+
+            margin-bottom: 12px;
+        }
+
+        .uml-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .uml-card p {
+            color: #aebcda;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= QUIZ ================= */
+
+        .quiz-box {
+            max-width: 800px;
+
+            margin: auto;
+
+            padding: 28px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(15,26,55,0.8);
+
+            border:
+                1px solid rgba(100,160,255,0.25);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .quiz-progress {
+            color: #73bcff;
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            font-size: 23px;
+
+            line-height: 1.5;
+
+            margin-bottom: 20px;
+        }
+
+        .answers {
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .answer-btn {
+            width: 100%;
+
+            padding: 15px;
+
+            text-align: left;
+
+            border-radius: 14px;
+
+            border:
+                1px solid rgba(110,160,255,0.22);
+
+            background:
+                rgba(255,255,255,0.05);
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition: 0.25s;
+        }
+
+        .answer-btn:hover {
+            background:
+                rgba(70,120,255,0.16);
+
+            border-color:
+                rgba(100,170,255,0.55);
+
+            transform:
+                translateX(4px);
+        }
+
+        .answer-btn.correct {
+            background:
+                rgba(30,180,100,0.2);
+
+            border-color:
+                #35d58a;
+        }
+
+        .answer-btn.wrong {
+            background:
+                rgba(230,60,70,0.2);
+
+            border-color:
+                #ff6570;
+        }
+
+        .quiz-result {
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .quiz-result h3 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .quiz-result p {
+            color: #b5c3df;
+
+            margin-bottom: 20px;
+        }
+
+        .restart-btn {
+            border: none;
+
+            cursor: pointer;
+
+            color: white;
+
+            background:
+                linear-gradient(135deg,#2563eb,#7c3aed);
+
+            padding: 12px 22px;
+
+            border-radius: 14px;
+
+            font-weight: bold;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-top:
+                1px solid rgba(100,160,255,0.12);
+
+            color: #7888aa;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .sdlc-container {
+                grid-template-columns:
+                    repeat(3,1fr);
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .topic-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .material-card {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .video-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .requirement-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .uml-box {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding:
+                    12px 15px;
+            }
+
+            .logo {
+                font-size:
+                    20px;
+            }
+
+            .back-btn {
+                font-size:
+                    12px;
+
+                padding:
+                    8px 12px;
+            }
+
+            .hero {
+                padding:
+                    50px 15px 35px;
+            }
+
+            .hero-icon {
+                width:
+                    70px;
+
+                height:
+                    70px;
+
+                font-size:
+                    34px;
+            }
+
+            .hero p {
+                font-size:
+                    15px;
+            }
+
+            main {
+                padding:
+                    0 15px 45px;
+            }
+
+            .section {
+                margin-top:
+                    35px;
+            }
+
+            .section-title {
+                font-size:
+                    25px;
+            }
+
+            .topic-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .topic-card {
+                padding:
+                    20px;
+            }
+
+            .material-card {
+                padding:
+                    15px;
+            }
+
+            .material-image-box {
+                min-height:
+                    220px;
+            }
+
+            .material-content h3 {
+                font-size:
+                    25px;
+            }
+
+            .pdf-card {
+                padding:
+                    28px 18px;
+            }
+
+            .pdf-buttons {
+                flex-direction:
+                    column;
+            }
+
+            .pdf-buttons .btn {
+                width:
+                    100%;
+            }
+
+            .sdlc-container {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .uml-box {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .quiz-box {
+                padding:
+                    20px 15px;
+            }
+
+            .quiz-question {
+                font-size:
+                    19px;
+            }
+
+            .answer-btn {
+                font-size:
+                    14px;
+
+                padding:
+                    14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                ✦ EDU-TECH
+            </div>
+
+            <a href="index.html" class="back-btn">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            🔍
+        </div>
+
+        <h1>SYSTEM ANALYSIS</h1>
+
+        <p>
+            Learn how systems are studied, planned and improved.
+            Explore system requirements, SDLC, information gathering,
+            process modelling, DFD, UML and system implementation.
+        </p>
+
+    </section>
+
+
+
+    <main>
+
+
+        <!-- ================= TOPICS ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                📚 <span>Learning Topics</span>
+            </h2>
+
+
+            <div class="topic-grid">
+
+
+                <div class="topic-card">
+
+                    <div class="topic-number">
+                        01
+                    </div>
+
+                    <div class="topic-icon">
+                        🖥️
+                    </div>
+
+                    <h3>
+                        System Fundamentals
+                    </h3>
+
+                    <p>
+                        Understand what a system is,
+                        its components and how different
+                        parts work together.
+                    </p>
+
+                </div>
+
+
+
+                <div class="topic-card">
+
+                    <div class="topic-number">
+                        02
+                    </div>
+
+                    <div class="topic-icon">
+                        🔄
+                    </div>
+
+                    <h3>
+                        SDLC
+                    </h3>
+
+                    <p>
+                        Learn the System Development Life Cycle
+                        and the stages used to develop information systems.
+                    </p>
+
+                </div>
+
+
+
+                <div class="topic-card">
+
+                    <div class="topic-number">
+                        03
+                    </div>
+
+                    <div class="topic-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        Requirements Analysis
+                    </h3>
+
+                    <p>
+                        Identify what users and organizations
+                        need from a proposed system.
+                    </p>
+
+                </div>
+
+
+
+                <div class="topic-card">
+
+                    <div class="topic-number">
+                        04
+                    </div>
+
+                    <div class="topic-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        Information Gathering
+                    </h3>
+
+                    <p>
+                        Learn techniques such as interviews,
+                        questionnaires and observation.
+                    </p>
+
+                </div>
+
+
+
+                <div class="topic-card">
+
+                    <div class="topic-number">
+                        05
+                    </div>
+
+                    <div class="topic-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Data Flow Diagram
+                    </h3>
+
+                    <p>
+                        Understand how data moves through
+                        a system using DFD models.
+                    </p>
+
+                </div>
+
+
+
+                <div class="topic-card">
+
+                    <div class="topic-number">
+                        06
+                    </div>
+
+                    <div class="topic-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        UML
+                    </h3>
+
+                    <p>
+                        Explore diagrams used to model
+                        system structure and behaviour.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= VISUAL LEARNING ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                🧠 <span>Visual Learning</span>
+            </h2>
+
+
+            <div class="material-card">
+
+
+                <div class="material-image-box">
+
+                    <img
+                        src="system-analysis-picture.jpg"
+                        alt="System Analysis Learning Picture"
+                        class="material-image"
+                    >
+
+                </div>
+
+
+
+                <div class="material-content">
+
+                    <h3>
+                        What is System Analysis?
+                    </h3>
+
+                    <p>
+                        System analysis is the process of studying
+                        a problem, understanding the current system,
+                        identifying requirements and defining what
+                        a new or improved system should accomplish.
+                    </p>
+
+                    <p>
+                        A system analyst may study:
+                    </p>
+
+                    <ul class="material-list">
+
+                        <li>Current system problems</li>
+
+                        <li>User requirements</li>
+
+                        <li>Business processes</li>
+
+                        <li>Data and information flow</li>
+
+                        <li>System constraints</li>
+
+                        <li>Possible improvements</li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= VIDEO ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                🎬 <span>Video Lessons</span>
+            </h2>
+
+
+            <div class="video-grid">
+
+
+                <!-- VIDEO 1 -->
+
+                <div class="video-card">
+
+                    <div class="video-wrapper">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/KnSBNd3b0qI"
+                            title="System Analysis Video Lesson 1"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+
+                    <div class="video-info">
+
+                        <h3>
+                            📺 System Analysis Lesson 1
+                        </h3>
+
+                        <p>
+                            Watch the first system analysis lesson.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- VIDEO 2 -->
+
+                <div class="video-card">
+
+                    <div class="video-wrapper">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/rK0xSNQeHnU"
+                            title="System Analysis Video Lesson 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+
+                    <div class="video-info">
+
+                        <h3>
+                            📺 System Analysis Lesson 2
+                        </h3>
+
+                        <p>
+                            Continue learning with the second lesson.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PDF ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                📖 <span>Study Material</span>
+            </h2>
+
+
+            <div class="pdf-card">
+
+                <div class="pdf-icon">
+                    📄
+                </div>
+
+                <h3>
+                    System Analysis PDF Notes
+                </h3>
+
+                <p>
+                    Open your System Analysis notes directly
+                    on your phone or download them for offline study.
+                </p>
+
+
+                <div class="pdf-buttons">
+
+                    <a
+                        href="system-analysis.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-open">
+
+                        📖 Open PDF
+
+                    </a>
+
+
+                    <a
+                        href="system-analysis.pdf"
+                        download
+                        class="btn btn-download">
+
+                        ⬇️ Download PDF
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SDLC ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                🔄 <span>System Development Life Cycle</span>
+            </h2>
+
+
+            <div class="sdlc-container">
+
+
+                <div class="sdlc-card">
+
+                    <div class="sdlc-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Planning
+                    </h3>
+
+                    <p>
+                        Identify the problem,
+                        objectives and project scope.
+                    </p>
+
+                </div>
+
+
+
+                <div class="sdlc-card">
+
+                    <div class="sdlc-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Analysis
+                    </h3>
+
+                    <p>
+                        Study requirements,
+                        problems and information needs.
+                    </p>
+
+                </div>
+
+
+
+                <div class="sdlc-card">
+
+                    <div class="sdlc-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <p>
+                        Define how the proposed
+                        system will work.
+                    </p>
+
+                </div>
+
+
+
+                <div class="sdlc-card">
+
+                    <div class="sdlc-number">
+                        4
+                    </div>
+
+                    <h3>
+                        Implementation
+                    </h3>
+
+                    <p>
+                        Build, install and deploy
+                        the new system.
+                    </p>
+
+                </div>
+
+
+
+                <div class="sdlc-card">
+
+                    <div class="sdlc-number">
+                        5
+                    </div>
+
+                    <h3>
+                        Testing
+                    </h3>
+
+                    <p>
+                        Check whether the system
+                        works according to requirements.
+                    </p>
+
+                </div>
+
+
+
+                <div class="sdlc-card">
+
+                    <div class="sdlc-number">
+                        6
+                    </div>
+
+                    <h3>
+                        Maintenance
+                    </h3>
+
+                    <p>
+                        Maintain, support and
+                        improve the system.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= REQUIREMENTS ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                📋 <span>System Requirements</span>
+            </h2>
+
+
+            <div class="requirement-grid">
+
+
+                <div class="requirement-card">
+
+                    <h3>
+                        ⚙️ Functional Requirements
+                    </h3>
+
+                    <p>
+                        Describe what the system should do.
+                        For example, a student system may allow
+                        users to register, log in, view results
+                        and update information.
+                    </p>
+
+                </div>
+
+
+
+                <div class="requirement-card">
+
+                    <h3>
+                        🛡️ Non-Functional Requirements
+                    </h3>
+
+                    <p>
+                        Describe qualities and constraints of
+                        the system, such as security, performance,
+                        usability and reliability.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= INFORMATION GATHERING ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                🔎 <span>Information Gathering</span>
+            </h2>
+
+
+            <div class="uml-box">
+
+
+                <div class="uml-card">
+
+                    <div class="uml-icon">
+                        🗣️
+                    </div>
+
+                    <h3>
+                        Interview
+                    </h3>
+
+                    <p>
+                        Talk directly with users,
+                        staff or stakeholders to
+                        understand their needs.
+                    </p>
+
+                </div>
+
+
+
+                <div class="uml-card">
+
+                    <div class="uml-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Questionnaire
+                    </h3>
+
+                    <p>
+                        Collect information from
+                        multiple people using structured
+                        questions.
+                    </p>
+
+                </div>
+
+
+
+                <div class="uml-card">
+
+                    <div class="uml-icon">
+                        👀
+                    </div>
+
+                    <h3>
+                        Observation
+                    </h3>
+
+                    <p>
+                        Observe how users perform
+                        their current tasks and processes.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= DFD ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                📊 <span>Data Flow Diagram</span>
+            </h2>
+
+
+            <div class="dfd-container">
+
+
+                <div class="dfd-flow">
+
+
+                    <div class="dfd-item">
+
+                        <strong>
+                            👤 User
+                        </strong>
+
+                        <span>
+                            Provides information
+                        </span>
+
+                    </div>
+
+
+                    <div class="dfd-arrow">
+                        →
+                    </div>
+
+
+                    <div class="dfd-item">
+
+                        <strong>
+                            ⚙️ System
+                        </strong>
+
+                        <span>
+                            Processes data
+                        </span>
+
+                    </div>
+
+
+                    <div class="dfd-arrow">
+                        →
+                    </div>
+
+
+                    <div class="dfd-item">
+
+                        <strong>
+                            🗄️ Database
+                        </strong>
+
+                        <span>
+                            Stores information
+                        </span>
+
+                    </div>
+
+
+                    <div class="dfd-arrow">
+                        →
+                    </div>
+
+
+                    <div class="dfd-item">
+
+                        <strong>
+                            📄 Output
+                        </strong>
+
+                        <span>
+                            Displays results
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= UML ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                🧩 <span>UML Modelling</span>
+            </h2>
+
+
+            <div class="uml-box">
+
+
+                <div class="uml-card">
+
+                    <div class="uml-icon">
+                        👤
+                    </div>
+
+                    <h3>
+                        Use Case Diagram
+                    </h3>
+
+                    <p>
+                        Shows users and the functions
+                        they perform in a system.
+                    </p>
+
+                </div>
+
+
+
+                <div class="uml-card">
+
+                    <div class="uml-icon">
+                        🔄
+                    </div>
+
+                    <h3>
+                        Activity Diagram
+                    </h3>
+
+                    <p>
+                        Shows the flow of activities
+                        or processes in a system.
+                    </p>
+
+                </div>
+
+
+
+                <div class="uml-card">
+
+                    <div class="uml-icon">
+                        🧱
+                    </div>
+
+                    <h3>
+                        Class Diagram
+                    </h3>
+
+                    <p>
+                        Represents classes, attributes,
+                        methods and relationships.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                🧠 <span>System Analysis Quiz</span>
+            </h2>
+
+
+            <div class="quiz-box" id="quizBox">
+
+                <div
+                    class="quiz-progress"
+                    id="quizProgress">
+
+                    Question 1 of 10
+
+                </div>
+
+
+                <div
+                    class="quiz-question"
+                    id="quizQuestion">
+
+                </div>
+
+
+                <div
+                    class="answers"
+                    id="answers">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 EDU-TECH • System Analysis Learning
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        const questions = [
+
+
+            {
+                question:
+                    "What is the main purpose of system analysis?",
+
+                answers: [
+                    "To understand problems and requirements",
+                    "To play computer games",
+                    "To design a computer keyboard",
+                    "To create music"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "What does SDLC stand for?",
+
+                answers: [
+                    "System Data Learning Course",
+                    "Software Development Life Cycle",
+                    "System Design Learning Computer",
+                    "Software Database Logic Code"
+                ],
+
+                correct: 1
+            },
+
+
+            {
+                question:
+                    "Which phase focuses on understanding user requirements?",
+
+                answers: [
+                    "Analysis",
+                    "Maintenance",
+                    "Installation",
+                    "Testing"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "Which technique involves talking directly with users?",
+
+                answers: [
+                    "Interview",
+                    "Compilation",
+                    "Encryption",
+                    "Debugging"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "What does DFD stand for?",
+
+                answers: [
+                    "Data Flow Diagram",
+                    "Digital File Database",
+                    "Data Function Design",
+                    "Database Flow Document"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "What does a DFD show?",
+
+                answers: [
+                    "How data moves through a system",
+                    "Computer hardware prices",
+                    "Internet speed",
+                    "Keyboard layouts"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "What is a functional requirement?",
+
+                answers: [
+                    "A function the system should perform",
+                    "The color of the computer",
+                    "The size of a monitor",
+                    "The brand of a laptop"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "Which UML diagram shows users and system functions?",
+
+                answers: [
+                    "Use Case Diagram",
+                    "Network Diagram",
+                    "Pie Chart",
+                    "Database Table"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "Which phase involves building and deploying the system?",
+
+                answers: [
+                    "Implementation",
+                    "Analysis",
+                    "Planning",
+                    "Requirement Gathering"
+                ],
+
+                correct: 0
+            },
+
+
+            {
+                question:
+                    "Why is system analysis important?",
+
+                answers: [
+                    "It helps understand problems and define requirements",
+                    "It makes computers heavier",
+                    "It removes the need for users",
+                    "It automatically creates every program"
+                ],
+
+                correct: 0
+            }
+
+        ];
+
+
+
+        let currentQuestion = 0;
+
+        let score = 0;
+
+
+
+        const quizProgress =
+            document.getElementById("quizProgress");
+
+
+        const quizQuestion =
+            document.getElementById("quizQuestion");
+
+
+        const answersContainer =
+            document.getElementById("answers");
+
+
+        const quizBox =
+            document.getElementById("quizBox");
+
+
+
+        function loadQuestion() {
+
+
+            const question =
+                questions[currentQuestion];
+
+
+            quizProgress.textContent =
+                `Question ${currentQuestion + 1} of ${questions.length}`;
+
+
+            quizQuestion.textContent =
+                question.question;
+
+
+            answersContainer.innerHTML = "";
+
+
+
+            question.answers.forEach(
+                (answer, index) => {
+
+
+                    const button =
+                        document.createElement("button");
+
+
+                    button.className =
+                        "answer-btn";
+
+
+                    button.textContent =
+                        answer;
+
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            checkAnswer(
+                                button,
+                                index
+                            );
+
+                        }
+                    );
+
+
+                    answersContainer.appendChild(
+                        button
+                    );
+
+
+                }
+            );
+
+        }
+
+
+
+        function checkAnswer(
+            button,
+            selectedIndex
+        ) {
+
+
+            const question =
+                questions[currentQuestion];
+
+
+            const buttons =
+                document.querySelectorAll(
+                    ".answer-btn"
+                );
+
+
+            buttons.forEach(
+                btn => {
+
+                    btn.disabled = true;
+
+                }
+            );
+
+
+
+            if (
+                selectedIndex ===
+                question.correct
+            ) {
+
+
+                button.classList.add(
+                    "correct"
+                );
+
+
+                score++;
+
+
+            } else {
+
+
+                button.classList.add(
+                    "wrong"
+                );
+
+
+                buttons[
+                    question.correct
+                ].classList.add(
+                    "correct"
+                );
+
+            }
+
+
+
+            setTimeout(
+                () => {
+
+
+                    currentQuestion++;
+
+
+                    if (
+                        currentQuestion <
+                        questions.length
+                    ) {
+
+
+                        loadQuestion();
+
+
+                    } else {
+
+
+                        showQuizResult();
+
+                    }
+
+
+                },
+                900
+            );
+
+        }
+
+
+
+        function showQuizResult() {
+
+
+            let message = "";
+
+
+            if (score === 10) {
+
+                message =
+                    "Perfect! 🌟";
+
+            }
+
+            else if (score >= 8) {
+
+                message =
+                    "Excellent work! 🎉";
+
+            }
+
+            else if (score >= 5) {
+
+                message =
+                    "Good job! 👍";
+
+            }
+
+            else {
+
+                message =
+                    "Keep learning! 📚";
+
+            }
+
+
+
+            quizBox.innerHTML = `
+
+                <div class="quiz-result">
+
+                    <div class="pdf-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        ${message}
+                    </h3>
+
+                    <p>
+                        You scored
+                        <strong>
+                            ${score}
+                        </strong>
+                        out of
+                        <strong>
+                            ${questions.length}
+                        </strong>.
+                    </p>
+
+                    <button
+                        class="restart-btn"
+                        onclick="restartQuiz()">
+
+                        🔄 Try Again
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        function restartQuiz() {
+
+            currentQuestion = 0;
+
+            score = 0;
+
+
+            quizBox.innerHTML = `
+
+                <div
+                    class="quiz-progress"
+                    id="quizProgress">
+
+                    Question 1 of 10
+
+                </div>
+
+
+                <div
+                    class="quiz-question"
+                    id="quizQuestion">
+
+                </div>
+
+
+                <div
+                    class="answers"
+                    id="answers">
+
+                </div>
+
+            `;
+
+
+            location.reload();
+
+        }
+
+
+
+        loadQuestion();
+
+
+    </script>
+
+
+</body>
+
+</html>
+
